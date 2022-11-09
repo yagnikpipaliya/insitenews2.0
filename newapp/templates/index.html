@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>INSITE</title>
+    {% include 'headerlinks.html' %}
+</head>
+<body>
+<div class="container-fluid " style="padding:0px">
+
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <div class="news-container">
+            <form class="form-inline my-2 my-lg-3" style="justify-content: space-between;">
+                <h2>All News</h2>
+                <input id="myInput" onkeyup="searchnews()" class="form-control " type="text"
+                       placeholder="Search news"
+                       aria-label="Search" style="width: 31%;"> <!-- class="mr-sm-2"-->
+            </form>
+            {% if e %}
+            <div class="alert alert-danger" role="alert">
+                {{e}}
+            </div>
+            {% endif %}
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="row" style="margin-bottom:50px;">
+                {% for value in all.data %}
+                {% include 'displaycarddata.html' %}
+                <!--<div class="col" id="col">
+                    <div class="card h-100" id="card">
+                        <img src="{{value.imageUrl}}" class="card-img-top" alt="..." style="max-height:250px">
+                        <div class="card-body" id="body">
+                            <h5 class="card-title" style="font-weight:bold">{{ value.title }}</h5>
+                            <p class="card-text">{{ value.content }}</p>
+                            <text class="card-text text-muted"
+                                  style="font-size:15px;font-weight:unset;font-family:'Montserrat', sans-serif;">
+                                {{value.date }}
+                            </text> &nbsp;
+                            <text class="card-text text-muted"
+                                  style="font-size:15px;font-weight:unset;font-family:'Montserrat', sans-serif;">
+                                {{value.time}}
+                            </text>
+                        </div>
+                        {% if value.readMoreUrl %}
+                        <h6 class="card-text card-footer"><a href={{value.readMoreUrl}} style="text-decoration:none;">Read
+                            more about this news</a></h6>
+                        {% endif %}
+                    </div>
+                </div>-->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+
+</div>
+</body>
+</html>

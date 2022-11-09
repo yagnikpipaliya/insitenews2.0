@@ -1,0 +1,20 @@
+<div class="col" id="col">
+    <div class="card h-100" id="card">
+        <img src="{{value.imageUrl}}" class="card-img-top" alt="..." style="max-height:250px">
+        <div class="card-body" id="body">
+            <h5 class="card-title" style="font-weight:bold">{{ value.title }}</h5>
+            <p class="card-text">{{ value.content }}</p>
+            <text class="card-text text-muted"
+                  style="font-size:15px;font-weight:unset;font-family:'Montserrat', sans-serif;">
+                {{value.date }}
+            </text> &nbsp;
+            <text class="card-text text-muted"
+                  style="font-size:15px;font-weight:unset;font-family:'Montserrat', sans-serif;">
+                {{value.time}}
+            </text>
+        </div>
+        {% if value.readMoreUrl %}
+        <h6 class="card-text card-footer"><a href={{value.readMoreUrl}} style="text-decoration:none;">Read more...</a></h6>
+        {% endif %}
+    </div>
+</div>

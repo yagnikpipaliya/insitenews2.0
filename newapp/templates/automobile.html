@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>INSITE Automobile</title>
+    {% include 'headerlinks.html' %}
+</head>
+<body>
+
+<div class="container-fluid " style="padding:0px">
+
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="news-container">
+            <form class="form-inline my-2 my-lg-3" style="justify-content: space-between;">
+                <h2>Automobile</h2>
+                <input id="myInput" onkeyup="searchnews()" class="form-control " type="text"
+                       placeholder="Search news"
+                       aria-label="Search" style="width: 31%;"> <!-- class="mr-sm-2"-->
+            </form>
+            {% if e %}
+            <div class="alert alert-danger" role="alert">
+                {{e}}
+            </div>
+            {% endif %}
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="row" style="margin-bottom:50px;">
+                {% for value in automobile.data %}
+                {% include 'displaycarddata.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>About Developer</h4>
+                <ul>
+                    <li><a href="#">Yagnik Pipaliya</a></li>
+                    <li><a href="https://ldce.ac.in/">@LDCE</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>copyright</h4>
+                <ul>
+                    <li><a href="#">©InSite News</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yagnik-pipaliya-a03586163/"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a id="button"><i class="fas fa-angle-up" style="font-weight: 1000; font-size: 26px;color:black;"></i></a>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+      var btn = $('#button');
+
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
+    });
+
+    btn.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+
+
+
+
+</script>
+
+<script>
+
+        const searchnews = () => {
+            let filter = document.getElementById('myInput').value.toUpperCase();
+            row = document.getElementById('row');
+            col = row.getElementsByTagName('div');
+
+            for(var i=0;i<col.length;i++){
+                let heading = col[i].getElementsByTagName('h5')[0];
+                let headingValue = heading.textContent || heading.innerHTML ;
+
+                let para = col[i].getElementsByTagName('p')[0];
+                let paraValue = para.textContent || para.innerHTML ;
+
+                let text = col[i].getElementsByTagName('text')[0];
+                let textValue = text.textContent || text.innerHTML ;
+
+                if(headingValue.toUpperCase().indexOf(filter) > -1 ||
+                   paraValue.toUpperCase().indexOf(filter) > -1 ||
+                   textValue.toUpperCase().indexOf(filter) > -1  )
+                {
+                    col[i].style.display = '';
+                }else{
+                    col[i].style.display = 'none';
+                }
+            }
+        }
+</script>
+

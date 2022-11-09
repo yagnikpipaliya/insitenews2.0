@@ -1,0 +1,1 @@
+web: gunicorn Insitenews.wsgi --log-file -
