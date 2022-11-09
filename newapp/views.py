@@ -8,7 +8,7 @@ from django.shortcuts import render
 def index(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=")
+        url = requests.get("")
         response = url.json()
         records['all'] = response
         return render(request, 'index.html',records)
@@ -20,7 +20,7 @@ def index(request):
 def national(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=national")
+        url = requests.get("")
         response = url.json()
         records['national'] = response
         return render(request, 'national.html',records)
@@ -32,7 +32,7 @@ def national(request):
 def business(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=business")
+        url = requests.get("")
         response = url.json()
         records['business'] = response
         return render(request, 'business.html',records)
@@ -44,7 +44,7 @@ def business(request):
 def sports(request):
     try:
         records = {}
-        url = "https://inshortsapi.vercel.app/news?category=sports"
+        url = ""
         response = requests.get(url=url)
         inshorts_data= response.json()
         records['sports'] = inshorts_data
@@ -57,7 +57,7 @@ def sports(request):
 def world(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=world")
+        url = requests.get("")
         response = url.json()
         records['world'] = response
         return render(request, 'world.html',records)
@@ -69,7 +69,7 @@ def world(request):
 def politics(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=politics")
+        url = requests.get("")
         response = url.json()
         records['politics'] = response
         return render(request, 'politics.html',records)
@@ -81,7 +81,7 @@ def politics(request):
 def technology(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=technology")
+        url = requests.get("")
         response = url.json()
         records['technology'] = response
         return render(request, 'technology.html',records)
@@ -93,7 +93,7 @@ def technology(request):
 def startup(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=startup")
+        url = requests.get("")
         response = url.json()
         records['startup'] = response
         return render(request, 'startup.html',records)
@@ -105,7 +105,7 @@ def startup(request):
 def entertainment(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=entertainment")
+        url = requests.get("")
         response = url.json()
         records['entertainment'] = response
         return render(request, 'entertainment.html',records)
@@ -117,7 +117,7 @@ def entertainment(request):
 def miscellaneous(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=miscellaneous")
+        url = requests.get("")
         response = url.json()
         records['miscellaneous'] = response
         return render(request, 'miscellaneous.html',records)
@@ -129,7 +129,7 @@ def miscellaneous(request):
 def hatke(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=hatke")
+        url = requests.get("")
         response = url.json()
         records['hatke'] = response
         return render(request, 'hatke.html',records)
@@ -141,7 +141,7 @@ def hatke(request):
 def science(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=science")
+        url = requests.get("")
         response = url.json()
         records['science'] = response
         return render(request, 'science.html',records)
@@ -153,7 +153,7 @@ def science(request):
 def automobile(request):
     try:
         records = {}
-        url = requests.get("https://inshortsapi.vercel.app/news?category=automobile")
+        url = requests.get("")
         response = url.json()
         records['automobile'] = response
         return render(request, 'automobile.html',records)
